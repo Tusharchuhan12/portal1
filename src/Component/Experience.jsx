@@ -55,7 +55,7 @@ const ExperienceCard = ({ experience }) => {
             </div>
 
             <motion.div
-                variants={fadeIn("left", "spring", 0.2, 0.6)}
+                variants={fadeIn("left", "spring", 0.2, window.innerWidth < 640 ? 1.1 : 0.6)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
@@ -69,7 +69,7 @@ const ExperienceCard = ({ experience }) => {
                     {experience.points.map((point, i) => (
                         <motion.li
                             key={i}
-                            variants={fadeIn("left", "tween", i * 0.1, 0.4)}
+                            variants={fadeIn("left", "tween", i * 0.12, window.innerWidth < 640 ? 0.8 : 0.4)}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
